@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#101114">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='86'%3E%E2%9C%A6%3C/text%3E%3C/svg%3E">
+  <title>Bladebound — The Forgotten Armory</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Bladebound home"><span class="brand-mark">✦</span><span>BLADE<span class="brand-light">BOUND</span></span></a>
+      <div class="chapter"><span class="chapter-kicker">THE FORGOTTEN ARMORY</span><span class="chapter-name" id="roomName">THE ASHEN VAULT</span></div>
+      <div class="top-actions"><div class="sound-toggle" id="soundToggle" title="Toggle sound"><span id="soundIcon">♫</span><span class="sound-label">SOUND</span></div><div class="run-badge"><span class="run-dot"></span> RUN IN PROGRESS</div></div>
+    </header>
+    <section class="game-frame" aria-label="Bladebound dungeon game">
+      <canvas id="game" aria-label="Dungeon arena"></canvas>
+      <div class="vignette"></div>
+      <div class="hud-top">
+        <div class="hero-card"><div class="hero-portrait">⚔</div><div class="hero-info"><span class="hero-label">THE WAYFARER</span><div class="health-row" id="health"></div><span class="health-caption" id="healthText">100 / 100</span></div></div>
+        <div class="wave-card"><span class="wave-label">FLOOR <b id="floorNum">01</b></span><strong id="waveText">CLEAR THE VAULT</strong><div class="wave-progress"><span id="waveBar"></span></div></div>
+        <div class="kill-card"><span class="kill-skull">†</span><div><b id="killCount">0</b><span> VANQUISHED</span></div></div>
+      </div>
+      <div class="objective" id="objective"><span class="objective-icon">✧</span><span>THE ARMORY stirs...</span></div>
+      <div class="bottom-hud">
+        <div class="weapon-card"><div class="weapon-icon" id="weaponIcon">⚔</div><div><span class="weapon-label">WIELDED BLADE</span><strong id="weaponName">IRON FALCHION</strong><span class="weapon-sub" id="weaponSub">BALANCED · TIER I</span></div><div class="weapon-damage" id="damageValue">18<span>DMG</span></div></div>
+        <div class="controls-hint"><span class="keycap">WASD</span> MOVE <i>·</i> <span class="keycap">SPACE</span> SLASH <i>·</i> <span class="keycap">SHIFT</span> DASH</div>
+        <div class="mini-map-wrap"><span>VAULT MAP</span><canvas id="minimap" width="112" height="72"></canvas></div>
+      </div>
+      <div class="toast" id="toast"><span class="toast-icon">✦</span><span id="toastText">THE VAULT IS NEVER EMPTY.</span></div>
+      <div class="upgrade-overlay" id="upgradeOverlay" aria-hidden="true"><div class="upgrade-panel"><span class="eyebrow">A RELIC FROM THE ARMORY</span><h2>Choose your edge.</h2><p>The blade remembers every hand.</p><div class="upgrade-options" id="upgradeOptions"></div><button class="continue-button" id="continueButton">CONTINUE THE DESCENT <span>→</span></button></div></div>
+      <div class="gameover-overlay" id="gameoverOverlay" aria-hidden="true"><div class="upgrade-panel"><span class="eyebrow">THE ARMORY CLAIMS ANOTHER</span><h2>Your legend ends here.</h2><p id="runSummary">You vanquished 0 foes across 1 floor.</p><button class="continue-button" id="restartButton">RISE AGAIN <span>↻</span></button></div></div>
+      <div class="touch-controls" aria-label="Touch controls"><div class="dpad"><button data-dir="up" aria-label="Move up">▲</button><div><button data-dir="left" aria-label="Move left">◀</button><button data-dir="down" aria-label="Move down">▼</button><button data-dir="right" aria-label="Move right">▶</button></div></div><div class="touch-actions"><button class="touch-dash" id="touchDash">DASH</button><button class="touch-attack" id="touchAttack">SLASH</button></div></div>
+    </section>
+    <footer class="footer"><span>AN ENDLESS DESCENT THROUGH THE FORGOTTEN ARMORY</span><span class="footer-right">A BLADE IS ONLY AS TRUE AS ITS WIELDER <b>✦</b></span></footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
